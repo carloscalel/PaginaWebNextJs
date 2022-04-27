@@ -33,6 +33,13 @@ export default class MyDocument extends Document {
         return (
             <Html {...this.helmetHtmlAttrComponents}>
                 <Head>{this.helmetHeadComponents}</Head>
+
+                <script dangerouslySetInnerHTML={{
+                    __html: `window.dataLayer = window.dataLayer || [];
+                    function gtag(){dataLayer.push(arguments);}
+                    gtag('config', 'G-W2ELM5LV5C);`
+                }} />
+
                 <body {...this.helmetBodyAttrComponents}>
                     <Main />
                     <script src={withPrefix('js/plugins.js')} />
